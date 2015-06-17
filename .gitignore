@@ -1,0 +1,14 @@
+target
+node
+node_modules
+bower_components
+dist
+.idea
+*.iml
+.classpath
+.project
+.settings
+.tmp
+.merge_file*
+.sass-cache
+.DS_Store

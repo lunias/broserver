@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "baseName": "broserver",
+    "packageName": "com.broserver.bs",
+    "packageFolder": "com/broserver/bs",
+    "authenticationType": "oauth2",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "useCompass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "enableTranslation": true,
+    "rememberMeKey": "1fcf235a638e6cdb695de52bb0f97bca9554c412"
+  }
+}
