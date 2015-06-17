@@ -1,3 +1,48 @@
+<md-toolbar>
+<div class="md-toolbar-tools">
+	<h2>
+		<span>BroServer</span>
+	</h2>
+	<span flex></span>
+	
+	<md-button class="md-icon-button" aria-label="My Account">
+		<ng-md-icon icon="account_box" size="40" style="fill: greenyellow;">
+	</ng-md-icon>
+	
+    <md-menu>
+    
+      <md-button class="md-icon-button" aria-label="Open phone interactions menu" ng-click="$mdOpenMenu()">
+        <ng-md-icon md-menu-origin icon="phone" size="40" style="fill: orange;"></ng-md-icon>
+      </md-button>
+      
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="ctrl.redial($event)">
+            <md-icon md-svg-icon="dialpad" md-menu-align-target></md-icon>
+            Redial
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
+            <md-icon md-svg-icon="voicemail"></md-icon>
+            Check voicemail
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button ng-click="ctrl.toggleNotifications()">
+            <md-icon md-svg-icon="mess{{ctrl.notificationsEnabled ? 'age' : 'enger'}}"></md-icon>
+            {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+      
+    </md-menu>	
+	
+	</md-button>
+</div>
+</md-toolbar>
+
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -7,7 +52,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/"><span translate="global.title">jhipster</span> <span class="navbar-version">v{{VERSION}}</span></a>
+            <a class="navbar-brand" href="#/"><span>Navigatin' like a bro</span> <span class="navbar-version">v{{VERSION}}</span></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
             <ul class="nav navbar-nav nav-pills navbar-right">
