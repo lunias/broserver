@@ -1,48 +1,99 @@
 <md-toolbar>
-<div class="md-toolbar-tools">
-	<h2>
-		<span>BroServer</span>
-	</h2>
-	<span flex></span>
+	<div class="md-toolbar-tools" ng-switch="isAuthenticated()">
 	
-	<md-button class="md-icon-button" aria-label="My Account">
-		<ng-md-icon icon="account_box" size="40" style="fill: greenyellow;"></ng-md-icon>
-	</md-button>
-	
-    <md-menu md-offset="20 40">
-    
-      <md-button class="md-icon-button" aria-label="Open phone interactions menu" ng-click="$mdOpenMenu()">
-        <ng-md-icon md-menu-origin icon="phone" size="40" style="fill: orange;"></ng-md-icon>
-      </md-button>           
-      
-      <md-menu-content width="4">
-        <md-menu-item>
-          <md-button ng-click="ctrl.redial($event)">
-            <ng-md-icon md-menu-align-target icon="forum" size="20" style="padding-top: 5px;"></ng-md-icon>
-				<span style="padding-left: 20px;">Chat</span>           
-          </md-button>
-        </md-menu-item>
-        <md-menu-item>
-          <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
-            <ng-md-icon icon="voicemail" size="20" style="padding-top: 5px;"></ng-md-icon>
-				<span style="padding-left: 20px;">Mail</span> 
-          </md-button>
-        </md-menu-item>
-        <md-menu-divider></md-menu-divider>
-        <md-menu-item>
-          <md-button ng-click="ctrl.toggleNotifications()">
-            <ng-md-icon icon="mess{{ctrl.notificationsEnabled ? 'age' : 'enger'}}" size="20" style="padding-top: 5px;"></ng-md-icon>
-            	<span style="padding-left: 20px;">{{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} Notifications</span>
-          </md-button>
-        </md-menu-item>
-      </md-menu-content>
-      
-    </md-menu>	
-    	
-</div>
+		<h2>
+			<span>BroServer</span>
+		</h2>		
+		<span flex></span>
+		
+		<!-- Logged Out Menu -->		
+		<div ng-switch-when="false">
+			
+		    <md-menu md-offset="-200 40">    
+			  <md-button class="md-icon-button" aria-label="My Account" ng-click="$mdOpenMenu()">
+				<ng-md-icon md-menu-origin icon="account_circle" size="48" style="fill: orange;"></ng-md-icon>
+			  </md-button>          
+		      
+		      <md-menu-content width="4">
+		        <md-menu-item>
+		          <md-button ng-click="loginOrOut()" aria-label="Login">
+		            <ng-md-icon icon="person_outline" size="24" style="padding-top: 9px;"></ng-md-icon>
+		            	<span style="padding-left: 20px;">Login</span>
+		          </md-button>         
+		        </md-menu-item>
+		      </md-menu-content>      
+		    </md-menu>					
+		</div>
+		
+		<!-- Logged In Menu -->		
+		<div ng-switch-when="true">
+		
+		    <md-menu md-offset="-200 40">    
+			  <md-button class="md-icon-button" aria-label="My Account" ng-click="$mdOpenMenu()">
+				<ng-md-icon md-menu-origin icon="account_circle" size="48" style="fill: lightgreen;"></ng-md-icon>
+			  </md-button>          
+		      
+		      <md-menu-content width="4">
+		        <md-menu-item>
+		          <md-button ng-click="chatHistory()" aria-label="Chat History">
+		            <ng-md-icon md-menu-align-target icon="forum" size="24" style="padding-top: 9px;"></ng-md-icon>
+						<span style="padding-left: 20px;">Chat History</span>           
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-item>
+		          <md-button ng-click="privateMessages()" aria-label="Private Messages">
+		            <ng-md-icon icon="mail" size="24" style="padding-top: 9px;"></ng-md-icon>
+						<span style="padding-left: 20px;">Private Messages</span> 
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-divider></md-menu-divider>
+		        <md-menu-item>
+		          <md-button ng-click="profile()" aria-label="Profile">
+		            <ng-md-icon icon="edit" size="24" style="padding-top: 9px;"></ng-md-icon>
+		            	<span style="padding-left: 20px;">Profile</span>
+		          </md-button>         
+		        </md-menu-item>
+		        <md-menu-item>
+		          <md-button ng-click="changePassword()" aria-label="Change Password">
+		            <ng-md-icon icon="edit" size="24" style="padding-top: 9px;"></ng-md-icon>
+		            	<span style="padding-left: 20px;">Change Password</span>
+		          </md-button>         
+		        </md-menu-item>	
+		        <md-menu-item>
+		          <md-button ng-click="loginOrOut()" aria-label="Logout">
+		            <ng-md-icon icon="person" size="24" style="padding-top: 9px;"></ng-md-icon>
+		            	<span style="padding-left: 20px;">Logout</span>
+		          </md-button>         
+		        </md-menu-item>
+		      </md-menu-content>      
+		    </md-menu>		
+		
+		    <md-menu md-offset="20 40">    
+		      <md-button class="md-icon-button" aria-label="Open phone interactions menu" ng-click="$mdOpenMenu()">
+		        <ng-md-icon md-menu-origin icon="settings" size="48" style="fill: grey;"></ng-md-icon>
+		      </md-button>           
+		      
+		      <md-menu-content width="4">
+		        <md-menu-item>
+		          <md-button ng-click="changeTheme()" aria-label="Change Theme">
+		            <ng-md-icon md-menu-align-target icon="color_lens" size="24" style="padding-top: 9px;"></ng-md-icon>
+						<span style="padding-left: 20px;">Change Theme</span>           
+		          </md-button>
+		        </md-menu-item>
+		        <md-menu-divider></md-menu-divider>
+		        <md-menu-item>
+		          <md-button ng-click="toggleNotifications()" aria-label="Toggle Notifications">
+		            <ng-md-icon icon="notifications_{{notificationsEnabled ? 'on' : 'off'}}" size="24" style="padding-top: 9px;"></ng-md-icon>
+		            	<span style="padding-left: 20px;">{{notificationsEnabled ? 'Disable' : 'Enable' }} Notifications</span>
+		          </md-button>
+		        </md-menu-item>
+		      </md-menu-content>      
+		    </md-menu>		
+		</div>				    	
+	</div>
 </md-toolbar>
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" flex>
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
