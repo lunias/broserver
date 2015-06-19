@@ -1,5 +1,6 @@
-<div>
-    <h2 translate="configuration.title">configuration</h2>
+<div layout="column" layout-padding>
+
+    <h1 class=".md-display-1 form-header" translate="configuration.title">configuration</h1>
 
     <span translate="configuration.filter">Filter (by prefix)</span> <input type="text" ng-model="filter" class="form-control">
 
@@ -16,7 +17,7 @@
             <td>
                 <div class="row" ng-repeat="(key, value) in entry.properties">
                     <div class="col-md-6">{{key}}</div>
-                    <div class="col-md-6"><span class="pull-right label label-info" style="white-space: normal;word-break:break-all">{{value}}</span></div>
+                    <div class="col-md-6"><span class="pull-right label label-danger" style="white-space: normal;word-break:break-all">{{value}}</span></div>
                 </div>
             </td>
         </tr>

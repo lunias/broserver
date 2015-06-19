@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('broserverApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascalprecht.translate',
-    'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll', 'ngMaterial', 'ngMdIcons'])
+    'ngResource', 'ui.router', 'ngCookies', 'ngCacheBuster', 'infinite-scroll', 'ngMaterial', 'ngMdIcons', 'ngMessages'])
 
     .run(function ($rootScope, $location, $window, $http, $state, $translate, Language, Auth, Principal, ENV, VERSION) {
         $rootScope.ENV = ENV;
@@ -125,6 +125,6 @@ angular.module('broserverApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
         $mdThemingProvider.theme('default')
         	.primaryPalette('red')
         	.accentPalette('amber')
-        	.warnPalette('yellow');
+        	.warnPalette('amber');
 
     });

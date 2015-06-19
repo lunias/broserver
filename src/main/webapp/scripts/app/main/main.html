@@ -1,11 +1,11 @@
 <div ng-cloak>
     <div layout="column" layout-align="center center">
         <div>
-            <h1>Welcome, Bros!</h1>
+            <h1 class="md-display-1">Welcome, Bros!</h1>
             <p class="lead">Bask in the bro</p>
 
             <div ng-switch="isAuthenticated()">
-                <div class="alert alert-danger" ng-switch-when="true" translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
+                <div class="alert alert-warning" ng-switch-when="true" translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
                     You are logged in as user "{{account.login}}".
                 </div>
 

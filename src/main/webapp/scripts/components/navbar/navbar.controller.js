@@ -48,7 +48,7 @@ angular.module('broserverApp')
         	$mdDialog.show(
         	    $mdDialog.alert()
         	        .title('You tryna pick a theme?')
-        	        .content('Come inspect my wares...')
+        	        .content('Come inspect my warez...')
         	        .ok('Nice one!')
         	);
         };

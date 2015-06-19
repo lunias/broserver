@@ -7,14 +7,14 @@ angular.module('broserverApp')
             replace: true,
             restrict: 'E',
             template: '<div id="strength">' +
-                '<small translate="global.messages.validate.newpassword.strength">Password strength:</small>' +
+                '<h5 class=".md-display-5" translate="global.messages.validate.newpassword.strength">Password strength:</h5>' +
                 '<ul id="strengthBar">' +
                 '<li class="point"></li><li class="point"></li><li class="point"></li><li class="point"></li><li class="point"></li>' +
                 '</ul>' +
                 '</div>',
             link: function (scope, iElement, attr) {
                 var strength = {
-                    colors: ['#F00', '#F90', '#FF0', '#9F0', '#0F0'],
+                    colors: ['#FF7043', '#FFCA28', '#1DE9B6', '#26A69A', '#66BB6A'],
                     mesureStrength: function (p) {
 
                         var _force = 0;
