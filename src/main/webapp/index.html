@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>broserver</title>
+        <title>BroServer</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
     	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">        
@@ -26,13 +26,15 @@
 		
 		    <div ui-view="navbar" ng-cloak=""></div>
 		
-			<md-content flex>				
-				<md-whiteframe class="md-whiteframe-z2"
-					layout-padding layout-margin layout="column" ui-view="content">
-				</md-whiteframe>																										
+			<md-content class="main-content" flex>
+				<div layout="row" layout-align="center center" layout-padding layout-margin flex>
+					<md-whiteframe class="md-whiteframe-z5"
+						layout-padding layout-margin layout="column" ui-view="content">
+					</md-whiteframe>
+				</div>																														
 			</md-content>
 			
-			<div layout="row" layout-align="center" layout-margin layout-padding>            
+			<div class="footer" layout="row" layout-align="center" layout-margin layout-padding>            
         		<p>&copy bro.</p>
         	</div>
 		</div>		

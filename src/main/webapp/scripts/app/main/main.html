@@ -5,7 +5,7 @@
             <p class="lead">Bask in the bro</p>
 
             <div ng-switch="isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true" translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
+                <div class="alert alert-danger" ng-switch-when="true" translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
                     You are logged in as user "{{account.login}}".
                 </div>
 

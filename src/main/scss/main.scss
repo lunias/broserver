@@ -5,9 +5,27 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // endbower
 
 body {
-    background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.main-content {
+	background: #000000 url("../images/bg_brown.png") repeat-x;
+}
+
+.footer {
+	background: #000000;
+	color: #eee;
+	margin: 0px;
+}
+
+md-whiteframe {
+  background: #fff;
+  width: 80%;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -27,9 +45,15 @@ body {
     background-repeat: no-repeat;
 }
 
+.title-button {
+	text-transform: none;
+	font-size: 24px;
+}
+
 .navbar-version {
     font-size: 10px;
-    color: #ccc
+    line-height: 50px;
+    color: #bbb
 }
 
 .browserupgrade {
@@ -59,14 +83,6 @@ body {
 .error {
     color: white;
     background-color: red;
-}
-
-.hipster {
-    display: inline-block;
-    width: 347px;
-    height: 497px;
-    background: url("../images/hipster.png") no-repeat center top;
-    background-size: contain;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */

@@ -31,9 +31,4 @@ authentication:
         tokenValidityInSeconds: 1800
 
 swagger:
-    title: broserver API
-    description: broserver applications and beyond!
-    termsOfServiceUrl: http://jhipster.github.io/
-    contact:
-    license: Apache 2.0
-    licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
+    title: BroServer API

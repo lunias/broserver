@@ -3,12 +3,28 @@
 angular.module('broserverApp')
     .controller('NavbarController', function ($scope, $location, $state, $mdDialog, Auth, Principal) {
     	
-        $scope.isAuthenticated = Principal.isAuthenticated;
+    	Principal.identity().then(function(account) {
+            $scope.account = account;
+            $scope.isAuthenticated = Principal.isAuthenticated;
+        });    	
+    	
+    	$scope.$on('account:updated', function (event, account) {    	
+    		$scope.account = account; 
+    	});    	
+    	
         $scope.$state = $state;
         $scope.notificationsEnabled = true;
         
         $scope.toggleNotifications = function () {
         	$scope.notificationsEnabled = !$scope.notificationsEnabled;        	
+        };
+        
+        $scope.home = function () {
+        	$state.go('home');
+        }
+        
+        $scope.register = function () {
+        	$state.go('register');
         };
         
         $scope.profile = function () {
@@ -19,8 +35,7 @@ angular.module('broserverApp')
         	$state.go('password');
         }
         
-        $scope.loginOrOut = function () {
-        	
+        $scope.loginOrOut = function () {        	
         	if ($scope.isAuthenticated()) {
                 Auth.logout();
                 $state.go('home');
@@ -32,9 +47,9 @@ angular.module('broserverApp')
         $scope.changeTheme = function () {
         	$mdDialog.show(
         	    $mdDialog.alert()
-        	        .title('You clicked!')
-        	        .content('Pick a theme baby!')
-        	        .ok('Nice')
+        	        .title('You tryna pick a theme?')
+        	        .content('Come inspect my wares...')
+        	        .ok('Nice one!')
         	);
         };
         

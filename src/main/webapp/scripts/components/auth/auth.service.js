@@ -16,6 +16,7 @@ angular.module('broserverApp')
                         $translate.use(account.langKey);
                         $translate.refresh();
                         Tracker.sendActivity();
+                        $rootScope.$broadcast('account:updated', account);
                         deferred.resolve(data);
                     });
                     return cb();

@@ -1,9 +1,10 @@
 <md-toolbar>
-	<div class="md-toolbar-tools" ng-switch="isAuthenticated()">
-	
-		<h2>
-			<span>BroServer</span>
-		</h2>		
+	<div class="md-toolbar-tools" ng-switch="isAuthenticated()">	
+		
+		<md-button class="title-button" aria-label="BroServer" ng-click="home()">
+	        <span>BroServer</span>
+		</md-button>		
+				
 		<span flex></span>
 		
 		<!-- Logged Out Menu -->		
@@ -11,7 +12,7 @@
 			
 		    <md-menu md-offset="-200 40">    
 			  <md-button class="md-icon-button" aria-label="My Account" ng-click="$mdOpenMenu()">
-				<ng-md-icon md-menu-origin icon="account_circle" size="48" style="fill: orange;"></ng-md-icon>
+				<ng-md-icon md-menu-origin icon="account_circle" size="48" style="fill: lightgrey;"></ng-md-icon>
 			  </md-button>          
 		      
 		      <md-menu-content width="4">
@@ -21,16 +22,30 @@
 		            	<span style="padding-left: 20px;">Login</span>
 		          </md-button>         
 		        </md-menu-item>
+		        
+		        <md-menu-item>
+		          <md-button ng-click="register()" aria-label="Register">
+		            <ng-md-icon icon="portrait" size="24" style="padding-top: 9px;"></ng-md-icon>
+		            	<span style="padding-left: 20px;">Register</span>
+		          </md-button>         
+		        </md-menu-item>		        
 		      </md-menu-content>      
 		    </md-menu>					
 		</div>
 		
 		<!-- Logged In Menu -->		
-		<div ng-switch-when="true">
-		
-		    <md-menu md-offset="-200 40">    
+		<div ng-switch-when="true">		
+			
+			<div layout="row">
+			
+			<h2 layout-align="center center" flex>
+			    <span style="line-height: 80px;">{{account.login}}</span>
+			</h2>
+				
+		    <md-menu md-offset="-200 40">		    
+		        
 			  <md-button class="md-icon-button" aria-label="My Account" ng-click="$mdOpenMenu()">
-				<ng-md-icon md-menu-origin icon="account_circle" size="48" style="fill: lightgreen;"></ng-md-icon>
+				<ng-md-icon md-menu-origin icon="account_circle" size="48" style="fill: #FFD8AA;"></ng-md-icon>
 			  </md-button>          
 		      
 		      <md-menu-content width="4">
@@ -48,9 +63,9 @@
 		        </md-menu-item>
 		        <md-menu-divider></md-menu-divider>
 		        <md-menu-item>
-		          <md-button ng-click="profile()" aria-label="Profile">
-		            <ng-md-icon icon="edit" size="24" style="padding-top: 9px;"></ng-md-icon>
-		            	<span style="padding-left: 20px;">Profile</span>
+		          <md-button ng-click="profile()" aria-label="Edit Profile">
+		            <ng-md-icon icon="assignment" size="24" style="padding-top: 9px;"></ng-md-icon>
+		            	<span style="padding-left: 20px;">Edit Profile</span>
 		          </md-button>         
 		        </md-menu-item>
 		        <md-menu-item>
@@ -69,8 +84,8 @@
 		    </md-menu>		
 		
 		    <md-menu md-offset="20 40">    
-		      <md-button class="md-icon-button" aria-label="Open phone interactions menu" ng-click="$mdOpenMenu()">
-		        <ng-md-icon md-menu-origin icon="settings" size="48" style="fill: grey;"></ng-md-icon>
+		      <md-button class="md-icon-button" aria-label="Settings" ng-click="$mdOpenMenu()">
+		        <ng-md-icon md-menu-origin icon="settings" size="48" style="fill: lightgrey;"></ng-md-icon>
 		      </md-button>           
 		      
 		      <md-menu-content width="4">
@@ -88,7 +103,8 @@
 		          </md-button>
 		        </md-menu-item>
 		      </md-menu-content>      
-		    </md-menu>		
+		    </md-menu>
+		    </div>		
 		</div>				    	
 	</div>
 </md-toolbar>
@@ -102,7 +118,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/"><span>Navigatin' like a bro</span> <span class="navbar-version">v{{VERSION}}</span></a>
+            <span class="navbar-version">v{{VERSION}}</span>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
             <ul class="nav navbar-nav nav-pills navbar-right">
@@ -124,30 +140,6 @@
                     </a>
                     <ul class="dropdown-menu">
                         <!-- JHipster will add entities to the menu here -->
-                    </ul>
-                </li>
-                <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                                <span>
-                                    <span class="glyphicon glyphicon-user"></span>
-                                    <span class="hidden-tablet" translate="global.menu.account.main">
-                                        Account
-                                    </span>
-                                    <b class="caret"></b>
-                                </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="settings"><span class="glyphicon glyphicon-wrench"></span>
-                            &#xA0;<span translate="global.menu.account.settings">Settings</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="password"><span class="glyphicon glyphicon-lock"></span>
-                            &#xA0;<span translate="global.menu.account.password">Password</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span>
-                            &#xA0;<span translate="global.menu.account.logout">Log out</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span>
-                            &#xA0;<span translate="global.menu.account.login">Authenticate</span></a></li>
-
-                        <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register"><span class="glyphicon glyphicon-plus-sign"></span>
-                            &#xA0;<span translate="global.menu.account.register">Register</span></a></li>
                     </ul>
                 </li>
                 <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-role="ROLE_ADMIN" class="dropdown pointer">

@@ -8569,17 +8569,39 @@ button.close {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\000037}}
 body {
-  background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000312}}
+.navbar {
+  margin-bottom: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000316}}
+.main-content {
+  background: #000000 url("../images/bg_brown.png") repeat-x;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000320}}
+.footer {
+  background: #000000;
+  color: #eee;
+  margin: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000326}}
+md-whiteframe {
+  background: #fff;
+  width: 80%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000331}}
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000335}}
 .development {
   position: absolute;
   width: 149px;
@@ -8593,13 +8615,20 @@ body {
   background-repeat: no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000330}}
-.navbar-version {
-  font-size: 10px;
-  color: #ccc;
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000348}}
+.title-button {
+  text-transform: none;
+  font-size: 24px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000353}}
+.navbar-version {
+  font-size: 10px;
+  line-height: 50px;
+  color: #bbb;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000359}}
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -8607,7 +8636,7 @@ body {
   padding: 0.2em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000366}}
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 300px;
@@ -8619,44 +8648,35 @@ body {
   padding: 60px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000377}}
 .hero-unit h1 {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000383}}
 .error {
   color: white;
   background-color: red;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000364}}
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url("../images/hipster.png") no-repeat center top;
-  background-size: contain;
-}
-
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000396}}
   .hipster {
     background: url("../images/hipster2x.png") no-repeat center top;
     background-size: contain;
   }
 }
 /* make sure browsers use the pointer cursor for anchors, even with no href */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\00003103}}
 a:hover {
   cursor: pointer;
 }
 
 /* start Password strength bar style */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\00003109}}
 ul#strength {
   display: inline;
   list-style: none;
@@ -8666,12 +8686,12 @@ ul#strength {
   vertical-align: 2px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\00003118}}
 .point:last {
   margin: 0 !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/cygwin64\/home\/lunias\/git-clones\/broserver\/src\/main\/scss\/main\.scss}line{font-family:\00003121}}
 .point {
   background: #DDD;
   border-radius: 2px;

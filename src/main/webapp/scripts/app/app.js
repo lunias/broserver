@@ -79,7 +79,7 @@ angular.module('broserverApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
             }
         };
     })
-    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $translateProvider, $mdThemingProvider, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider) {
 
         //Cache everything except rest api requests
         httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
@@ -121,5 +121,10 @@ angular.module('broserverApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pasc
         tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useCookieStorage();
         tmhDynamicLocaleProvider.storageKey('NG_TRANSLATE_LANG_KEY');
+        
+        $mdThemingProvider.theme('default')
+        	.primaryPalette('red')
+        	.accentPalette('amber')
+        	.warnPalette('yellow');
 
     });
